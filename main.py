@@ -1,8 +1,12 @@
 import os
 from PIL import Image, ImageStat
 
+# Where are your files located?
 INPUT_DIR = "default_image_folder"
 OUTPUT_DIR = "default_output_folder"
+# What are the thresholds for brightness?
+BRIGHTNESS_DARK_THRESHOLD = 100
+BRIGHTNESS_BRIGHT_THRESHOLD = 150
 
 
 def calculate_brightness(image_path):
@@ -14,8 +18,8 @@ def calculate_brightness(image_path):
 def main(
     image_folder=INPUT_DIR,
     output_folder=OUTPUT_DIR,
-    dark_threshold=100,
-    bright_threshold=150,
+    dark_threshold=BRIGHTNESS_DARK_THRESHOLD,
+    bright_threshold=BRIGHTNESS_BRIGHT_THRESHOLD,
 ):
     if not os.path.exists(image_folder):
         print("Image folder not found.")
