@@ -1,12 +1,11 @@
 import os
 from PIL import Image, ImageStat
 
-INPUT_DIR = "/default_image_folder/"
-OUTPUT_DIR = "/default_output_folder/"
+INPUT_DIR = "default_image_folder"
+OUTPUT_DIR = "default_output_folder"
 
 
 def calculate_brightness(image_path):
-    # Open image and convert to grayscale
     img = Image.open(image_path).convert("L")
     stat = ImageStat.Stat(img)
     return stat.mean[0]
